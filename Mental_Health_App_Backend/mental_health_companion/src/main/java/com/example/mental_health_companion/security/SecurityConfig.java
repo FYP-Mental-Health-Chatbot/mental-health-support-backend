@@ -44,10 +44,12 @@ public class SecurityConfig {
                                 "/api/auth/**",
                                 "/swagger-ui/**",
                                 "/v3/api-docs/**",
-                                "/webjars/**"
+                                "/webjars/**",
+                                "/api/chatbot/**",
+                                "/api/auth"
                         ).permitAll()
                         // Protected endpoints with roles
-                        .requestMatchers("/api/advisor/**").hasAnyAuthority("ADVISOR", "SUPER_ADMIN")
+                        .requestMatchers("/api/advisor/**").hasAnyAuthority("ADVISOR", "ADMIN")
                         .requestMatchers("/api/student/**").hasAuthority("STUDENT")
                         // All other requests require authentication
                         .anyRequest().authenticated()
