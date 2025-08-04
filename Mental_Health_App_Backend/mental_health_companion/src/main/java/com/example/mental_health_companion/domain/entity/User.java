@@ -27,6 +27,10 @@ public class User {
     @Column(nullable = false)
     private UserType userType;
 
+    private String phoneNumber;
+
+    private boolean isActive = true;
+
     private boolean isDeleted = false;
 
     private LocalDateTime deletedAt;

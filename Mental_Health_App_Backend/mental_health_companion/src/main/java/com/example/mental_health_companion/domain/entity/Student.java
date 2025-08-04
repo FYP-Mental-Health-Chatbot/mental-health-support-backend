@@ -20,11 +20,20 @@ public class Student {
     @Column(unique = true, nullable = false)
     private String universityId;
 
+    @Column(unique = true, nullable = false)
+    private String studentEmail;
+
+    @Column(unique = true, nullable = false)
+    private String studentPhone;
+
+    @Column(nullable = false)
+    private String academicYear;
+
     private LocalDateTime createdAt = LocalDateTime.now();
 
     private LocalDateTime updatedAt = LocalDateTime.now();
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "assigned_advisor_id")
-    private User assignedAdvisor;
+    private Advisor assignedAdvisor;
 }
