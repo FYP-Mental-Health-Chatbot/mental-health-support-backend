@@ -1,5 +1,6 @@
 package com.example.mental_health_companion.domain.entity;
 
+import com.example.mental_health_companion.enums.ChatState;
 import com.example.mental_health_companion.enums.SessionType;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -22,9 +23,9 @@ public class ChatSession {
     @JoinColumn(name = "advisor_id")
     private User advisor;
 
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
-    private SessionType sessionType = SessionType.BOT;
+//    @Enumerated(EnumType.STRING)
+//    @Column(nullable = false)
+//    private SessionType sessionType = SessionType.BOT;
 
     private boolean isActive = true;
 
@@ -35,4 +36,8 @@ public class ChatSession {
     private boolean isDeleted = false;
 
     private LocalDateTime deletedAt;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private ChatState chatState = ChatState.BOT;
 }

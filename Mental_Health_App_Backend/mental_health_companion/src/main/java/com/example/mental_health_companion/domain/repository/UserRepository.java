@@ -1,5 +1,6 @@
 package com.example.mental_health_companion.domain.repository;
 
+import com.example.mental_health_companion.domain.entity.ChatSession;
 import com.example.mental_health_companion.domain.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -12,4 +13,5 @@ public interface UserRepository extends JpaRepository<User, Long> {
     // Spring Data JPA automatically provides the implementation for this method
     Optional<User> findByEmail(String email);
 
+//    Optional<ChatSession> findBySessionId(Long sessionId);
 }

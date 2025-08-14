@@ -22,6 +22,9 @@ public class Message {
     @JoinColumn(name = "sender_id", nullable = false)
     private User sender;
 
+    @Column(nullable = false)
+    private Long studentId;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "receiver_id", nullable = true)
     private User receiver;
@@ -34,4 +37,6 @@ public class Message {
     private boolean isDeleted = false;
 
     private LocalDateTime deletedAt;
+
+    private String messageSource; // e.g., "bot", "student", "advisor"
 }

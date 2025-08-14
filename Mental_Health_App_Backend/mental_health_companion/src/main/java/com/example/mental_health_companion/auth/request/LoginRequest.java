@@ -17,4 +17,7 @@ public class LoginRequest {
 
     @NotBlank(message = "Password cannot be blank")
     private String password;
+
+    @NotBlank(message = "fcm token cannot be blank")
+    private String fcmToken;
 }

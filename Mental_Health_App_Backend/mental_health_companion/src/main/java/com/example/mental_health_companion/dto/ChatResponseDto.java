@@ -7,5 +7,6 @@ import lombok.Data;
 @AllArgsConstructor
 public class ChatResponseDto {
     private String response;
+    private String messageSource;
 }
 
